@@ -10,13 +10,13 @@
 
 
 /*******************************BeginSetUp*****************************************************************************/
-var Bot = require('ttapi');
-var AUTH = 'xxxxxxxxxxxxxxxxxxxxxxxxx'; //set the auth of your bot here.
-var USERID = 'xxxxxxxxxxxxxxxxxxxxxxxxx'; //set the userid of your bot here.
-var ROOMID = 'xxxxxxxxxxxxxxxxxxxxxxxxx'; //set the roomid of the room you want the bot to go to here.
+var Bot = require('Lisa the Goat');
+var AUTH = 'jYGUJmMUNRKcYjjFJGxrgFPn'; //set the auth of your bot here.
+var USERID = '63ed4d0d748e09001a41038c'; //set the userid of your bot here.
+var ROOMID = '63f78cf9c2cdbf001eef169c'; //set the roomid of the room you want the bot to go to here.
 var playLimit = 4; //set the playlimit here (default 4 songs)
-var songLengthLimit = 10.0; //set song limit in minutes
-var afkLimit = 20; //set the afk limit in minutes here
+var songLengthLimit = 7.0; //set song limit in minutes
+var afkLimit = 10; //set the afk limit in minutes here
 var howOftenToRepeatMessage = 15; //how often (in minutes) to repeat the room message (this corresponds to the MESSAGE variable below, only works when MESSAGE = true;)
 var roomafkLimit = 10; //set the afk limit for the audience here(in minutes), this feature is off by default
 var howManyVotes = 5; //how many awesome's for a song to be automatically added to the bot's playlist(only works when autoSnag = true;)
@@ -37,7 +37,7 @@ global.masterIds = ['1234', '1234']; //example (clear this before using)
 var whenToGetOnStage = 1; //when this many or less people djing the bot will get on stage(only if autodjing is enabled)
 var whenToGetOffStage = 3; //when this many people are on stage and auto djing is enabled the bot will get off stage(note: the bot counts as one person)
 
-var roomJoinMessage = ''; //the message users will see when they join the room, leave it empty for the default message (only works when greet is turned on)
+var roomJoinMessage = '👋 maaaaaaaaaaaah! Welcome to G.O.A.T Mixer!'; //the message users will see when they join the room, leave it empty for the default message (only works when greet is turned on)
 //example of how to use this, var roomJoinMessage = 'your message goes here';
 
 
@@ -69,7 +69,7 @@ var amountOfTimeToRefresh = 30; //the amount of seconds someone has to use the r
 //these variables set features to on or off as the default when the bot starts up,
 //most of them can be changed with commands while the bot is running
 // true = on, false = off
-var HowManyVotesToSkip = 2; //how many votes for a song to get skipped(default value, only works if voteSkip = true)
+var HowManyVotesToSkip = 3; //how many votes for a song to get skipped(default value, only works if voteSkip = true)
 var getonstage = true; //autodjing(on by default)
 var queue = true; //queue(on by default)
 var AFK = true; //afk limit(on by default), this is for the dj's on stage
@@ -79,14 +79,14 @@ var defaultMessage = true;
 							  (only works when MESSAGE = true) (this feature is on by default)
 							*/
 var GREET = true; //room greeting when someone joins the room(on by default)
-var voteSkip = false; //voteskipping(off by default)
-var roomAFK = false; //audience afk limit(off by default)
-var SONGSTATS = true; //song stats after each song(on by default)
+var voteSkip = true; //voteskipping(off by default)
+var roomAFK = true; //audience afk limit(off by default)
+var SONGSTATS = false; //song stats after each song(on by default)
 var kickTTSTAT = false; //kicks the ttstats bot when it tries to join the room(off by default)
 var LIMIT = true; //song length limit (on by default)
-var PLAYLIMIT = false; //song play limit, this is for the playLimit variable up above(off by default)
+var PLAYLIMIT = true; //song play limit, this is for the playLimit variable up above(off by default)
 var autoSnag = false; //auto song adding(different from every song adding), tied to howManyVotes up above, (off by default)
-var autoBop = false; //choose whether the bot will autobop for each song or not(against the rules but i leave it up to you) (off by default)
+var autoBop = true; //choose whether the bot will autobop for each song or not(against the rules but i leave it up to you) (off by default)
 var afkThroughPm = false; //choose whether afk warnings(for dj's on stage) will be given through the pm or the chatbox (false = chatbox, true = pm message)
 var greetThroughPm = false; //choose whether greeting message is through the pm or the chatbox(false = chatbox, true = pm), (only works when greeting message is turned on) (off by default)
 var repeatMessageThroughPm = false;
@@ -113,7 +113,7 @@ global.eventMessages = ['hello there', //enter your different event messages her
 //do not change the values of any of the global variables below unless you know what you are doing, the discriptions given are for reference only
 
 var defaultPlayLimit = playLimit; //saves the default value for the play limit
-var spamLimit = 3; //number of times a user can spam being kicked off the stage within 10 secs
+var spamLimit = 5; //number of times a user can spam being kicked off the stage within 10 secs
 var myId = null; //the userid of the person using the /fanme command, speak event only
 var detail = null; //the discription given in the "room" tab of the room that the bot is in
 var current = null; //the number of dj's on stage, gets reset every song
